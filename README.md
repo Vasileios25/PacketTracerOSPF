@@ -76,7 +76,37 @@ The project is a Simulation of Designed Network Topology to demonstrate ospf,sub
   15. Put the simulation mode on in order to see the packet flow.
 
 ---
+### OSPF Configuration:
 
+- **Router OSPF Configuration**:
+  - Enable OSPF on both routers using the following steps:
+    1. Enter `enable` and `config t`.
+    2. Enter `router ospf 1` to enable OSPF.
+    3. Configure the router's OSPF network using the command `network <ip-address> <wildcard-mask> area 0`.
+    4. For Router 0: `network 192.168.1.0 0.0.0.63 area 0`.
+    5. For Router 1: `network 192.168.1.64 0.0.0.63 area 0`.
+  - Verify the OSPF neighbors using the `show ip ospf neighbor` command.
+
+---
+
+### DHCP Relay Configuration:
+
+- **DHCP Relay Configuration**:
+  - On Router 0, configure the interface that connects to the clients to forward DHCP requests to the DHCP server:
+    1. Enter `config t`.
+    2. Enter the interface that connects to the client network (e.g., `GigabitEthernet0/0/0`).
+    3. Enable DHCP relay using the command `ip helper-address 192.168.1.0` (assuming the DHCP server IP is 192.168.1.0).
+  - This allows DHCP requests from clients to be forwarded to the DHCP server located in a different subnet.
+
+---
+
+### DNS Relay Configuration:
+
+- **DNS Relay Configuration**:
+  - On Router 0, configure DNS relay to forward DNS requests from clients to the DNS server:
+    1. Enter `config t`.
+    2. Enter the interface that connects to the client network (e.g., `GigabitEthernet0/0/0`).
+    3. Enable DNS relay using the command `ip dns server 192.168.1.194` (assuming the DNS server IP is 192.168.1.194).
 
 
 
