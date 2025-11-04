@@ -132,7 +132,31 @@ Contributors names and contact info
 ex. Vasilhs S.  
 
 
-## Version History
+##  Project Context
+This is a **personal learning project**, not production.  
+Its purpose is to document my growth as a Cloud / DevOps engineer.This project started as an exploration of how enterprise networks handle communication across multiple subnets.
+I wanted to go beyond simple IP addressing and understand how routers, DHCP, and DNS services interact in real-world networks.
+During the process, I learned:
+
+How to calculate and divide a large network into smaller subnets.
+
+How OSPF dynamically shares routing information between routers.
+
+The role of DHCP Relay in distributing IPs across subnets.
+
+The function of DNS Relay in centralizing name resolution.
+
+How to troubleshoot network connectivity in Packet Tracer (using ping, show ip route, and show ip ospf neighbor).
+
+I faced a few challenges:
+
+Understanding the DCE/DTE concept for serial links.
+
+Configuring OSPF so both routers correctly recognized each other as neighbors.
+
+Ensuring DHCP and DNS relays worked seamlessly between networks.
+
+Overall, this project helped me build confidence in network design, IP addressing, and router configuration — key skills for anyone learning networking fundamentals.
 
 
 
